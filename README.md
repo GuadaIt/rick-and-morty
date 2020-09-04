@@ -7,7 +7,7 @@ Check out a live demo here: https://guadait-rick-and-morty.netlify.app/
 To edit or run the project locally you must clone or download this repository.
 In the project directory, you can run:
 
-### `npm init`
+### `npm install`
 
 Installs all the dependencies that the project requires
 
