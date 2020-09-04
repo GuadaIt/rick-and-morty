@@ -1,0 +1,9 @@
+main {
+  display: block;
+}
+
+@media (min-width: 700px) {
+  main {
+    display: flex;
+  }
+}

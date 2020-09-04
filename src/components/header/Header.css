@@ -1,0 +1,18 @@
+header {
+  width: 100%;
+  background-color: rgb(49, 49, 49);
+  display: flex;
+  justify-content: center;
+  padding: 50px 0 30px;
+}
+
+#header-img {
+  height: auto;
+  width: 50%;
+}
+
+@media (max-width: 700px) {
+  #header-img {
+    width: 90%;
+  }
+}

@@ -1,0 +1,10 @@
+.err {
+  color: #D44611;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.err h1 {
+  font-size: 25px;
+}

@@ -1,0 +1,19 @@
+.cards-section {
+  padding: 50px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.cards-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+@media (min-width: 700px) {
+  .cards-section {
+    padding: 0 30px 50px;
+  }
+}

@@ -1,26 +1,33 @@
 import React from 'react';
-import logo from './logo.svg';
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+import { SearchBar, Header, MainContainer, Modal, Footer } from './components';
+
 import './App.css';
 
-function App() {
+const App = ({ hidden }) => {  
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header />
+      <SearchBar />
+      <MainContainer />
+      <Footer />
+
+      {!hidden && <Modal />}
+
     </div>
   );
-}
+};
 
-export default App;
+const mapState = state => {
+  return {
+    hidden: state.modal.hidden
+  }
+};
+
+App.propTypes = {
+  hidden: PropTypes.bool.isRequired
+};
+
+export default connect(mapState)(App);
