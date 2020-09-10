@@ -5,29 +5,20 @@ import { SearchBar, Header, MainContainer, Modal, Footer } from './components';
 
 import './App.css';
 
-const App = ({ hidden }) => {  
+const App = ({ isModalHidden }) => (  
+  <div className="App">
+    <Header />
+    <SearchBar />
+    <MainContainer />
+    <Footer />
 
-  return (
-    <div className="App">
-      <Header />
-      <SearchBar />
-      <MainContainer />
-      <Footer />
+    {!isModalHidden && <Modal />}
 
-      {!hidden && <Modal />}
+  </div>
+);
 
-    </div>
-  );
-};
+const mapState = state => ({ isModalHidden: state.modal.isModalHidden });
 
-const mapState = state => {
-  return {
-    hidden: state.modal.hidden
-  }
-};
-
-App.propTypes = {
-  hidden: PropTypes.bool.isRequired
-};
+App.propTypes = { isModalHidden: PropTypes.bool.isRequired };
 
 export default connect(mapState)(App);

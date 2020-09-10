@@ -2,7 +2,7 @@ import ApolloClient, { gql } from 'apollo-boost';
 
 //constants
 let initialData = {
-  hidden: true,
+  isModalHidden: true,
   info: {},
   fetching: false
 };
@@ -22,10 +22,10 @@ const GET_MODAL_INFO_SUCCESS = 'GET_MODAL_INFO_SUCCESS';
 const modalReducer = (state = initialData, action) => {
   switch(action.type) {
     case HIDE_MODAL:
-      return { hidden: true, info: {} }
+      return { isModalHidden: true, info: {} }
 
     case GET_MODAL_INFO:
-      return { ...state, hidden: false, fetching: true }
+      return { ...state, isModalHidden: false, fetching: true }
     case GET_MODAL_INFO_ERR:
       return { ...state, err: action.payload, fetching: false }
     case GET_MODAL_INFO_SUCCESS:
