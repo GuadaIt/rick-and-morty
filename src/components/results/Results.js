@@ -5,9 +5,7 @@ import { Pagination } from '@material-ui/lab';
 import { getCharactersAction } from '../../redux/charactersDuck';
 import { getLocationsAction } from '../../redux/locationsDuck';
 import { getEpisodesAction } from '../../redux/episodesDuck';
-import { Card } from '../';
-import { ErrorPage } from '../'
-import { Searching } from '../';
+import { LoadingSpinner, ErrorPage, Card } from '../';
 import './Results.css';
 
 const Results = ({ characters, episodes, locations, filter, getCharactersAction, getLocationsAction, getEpisodesAction }) => {
@@ -30,7 +28,7 @@ const Results = ({ characters, episodes, locations, filter, getCharactersAction,
     };
   };
 
-  if (filters[filter].fetching) return <Searching />;
+  if (filters[filter].fetching) return <LoadingSpinner />;
 
   return (
     <section className="cards-section">

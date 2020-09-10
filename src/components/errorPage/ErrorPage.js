@@ -7,7 +7,7 @@ const ErrorPage = ({ err }) => {
   if (err.networkError) {
     return (
       <div className="err">
-        <h1>404. Server error.</h1>
+        <h1>Server error.</h1>
       </div>  
     )
   } else {

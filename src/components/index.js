@@ -6,5 +6,5 @@ export { default as SearchBar } from './searchBar/SearchBar';
 export { default as Results } from './results/Results';
 export { default as MainContainer } from './mainContainer/MainContainer';
 export { default as ErrorPage } from './errorPage/ErrorPage';
-export { default as Searching } from './searching/Searching';
+export { default as LoadingSpinner } from './loadingSpinner/LoadingSpinner';
 export { default as Footer } from './footer/Footer';

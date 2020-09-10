@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { hideModalAction } from '../../redux/modalDuck';
-import { Searching, Card } from '../';
+import { LoadingSpinner, Card } from '../';
 import './Modal.css';
 
 const Modal = ({ modal, hideModalAction }) => {
@@ -11,7 +11,7 @@ const Modal = ({ modal, hideModalAction }) => {
 
   const { info, fetching } = modal;
 
-  if (fetching) return <div className="modal"><Searching /></div>;
+  if (fetching) return <div className="modal"><LoadingSpinner /></div>;
 
   if (info.__typename === 'Character') {
     return (
