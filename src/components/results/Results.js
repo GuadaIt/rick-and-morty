@@ -11,9 +11,9 @@ import './Results.css';
 const Results = ({ characters, episodes, locations, filter, getCharactersAction, getLocationsAction, getEpisodesAction }) => {
   
   const filters = {
-    'characters': characters,
-    'locations': locations,
-    'episodes': episodes
+    characters,
+    locations,
+    episodes
   };
 
   const pages = filters[filter].pages;
