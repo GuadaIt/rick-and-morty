@@ -66,11 +66,7 @@ const Modal = ({ modal, hideModalAction }) => {
   };
 };
 
-const mapState = state => {
-  return {
-    modal: state.modal
-  }
-};
+const mapState = state => ({ modal: state.modal });
 
 Modal.propTypes = {
   modal: PropTypes.object.isRequired,

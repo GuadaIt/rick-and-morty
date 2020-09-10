@@ -36,11 +36,7 @@ const SearchBar = ({ filter, searchCharAction, searchLocAction, searchEpAction }
   )
 };
 
-const mapState = state => {
-  return {
-    filter: state.filter.searcher
-  }
-};
+const mapState = state => ({ filter: state.filter.searcher });
 
 SearchBar.propTypes = {
   filter: PropTypes.string.isRequired,

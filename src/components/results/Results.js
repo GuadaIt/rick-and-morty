@@ -9,12 +9,8 @@ import { LoadingSpinner, ErrorPage, Card } from '../';
 import './Results.css';
 
 const Results = ({ characters, episodes, locations, filter, getCharactersAction, getLocationsAction, getEpisodesAction }) => {
-  
-  const filters = {
-    characters,
-    locations,
-    episodes
-  };
+
+  const filters = { characters, locations, episodes };
 
   const pages = filters[filter].pages;
 
@@ -33,27 +29,25 @@ const Results = ({ characters, episodes, locations, filter, getCharactersAction,
   return (
     <section className="cards-section">
       {!filters[filter].err ?
-      <>
-        <div className="cards-container">
-          {filters[filter].array.map(item => <Card key={item.id} info={item} />)}
-        </div>  
-        <Pagination count={pages} variant="outlined" shape="rounded" onChange={handleChange}/>
-      </>
-      : <ErrorPage err={filters[filter].err} />
-      } 
-      
+        <>
+          <div className="cards-container">
+            {filters[filter].array.map(item => <Card key={item.id} info={item} />)}
+          </div>
+          <Pagination count={pages} variant="outlined" shape="rounded" onChange={handleChange} />
+        </>
+        : <ErrorPage err={filters[filter].err} />
+      }
+
     </section>
   )
 };
 
-const mapState = state => {
-  return {
-    characters: state.characters,
-    locations: state.locations,
-    episodes: state.episodes,
-    filter: state.filter.searcher
-  }
-};
+const mapState = state => ({
+  characters: state.characters,
+  locations: state.locations,
+  episodes: state.episodes,
+  filter: state.filter.searcher
+});
 
 Results.propTypes = {
   characters: PropTypes.object.isRequired,

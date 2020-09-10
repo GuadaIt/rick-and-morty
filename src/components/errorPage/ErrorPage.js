@@ -19,8 +19,6 @@ const ErrorPage = ({ err }) => {
   };  
 };
 
-ErrorPage.propTypes = {
-  err: PropTypes.object.isRequired
-};
+ErrorPage.propTypes = { err: PropTypes.object.isRequired };
 
 export default ErrorPage;
