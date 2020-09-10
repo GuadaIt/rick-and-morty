@@ -42,11 +42,7 @@ const Card = ({ info, showModalAction }) => {
     };
   };
 
-  return (
-    <>
-      {renderCard()}
-    </>
-  );
+  return renderCard();
 };
 
 Card.propTypes = {
